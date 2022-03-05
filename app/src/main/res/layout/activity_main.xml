@@ -28,7 +28,10 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="0"
-                android:textSize="30sp" />
+
+                android:textSize="30sp"
+                />
+
 
             <Button
                 android:id="@+id/square2"
