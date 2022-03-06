@@ -7,224 +7,144 @@ package com.example.tictactoegame;
         import android.widget.Button;
         import android.widget.TextView;
 
-        import org.w3c.dom.Text;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    // Declaring buttons and information about particular player turn.
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
+    TextView info;
+    Button newgame;
 
-public class MainActivity extends AppCompatActivity {
+    // Declaration of two players
+    int player_0 = 0;
+    int player_x = 1;
 
+    // Setting Player status as active. Player 1 goes first automatically
+    int active_player = player_0;  // Initially it is player_0
 
+    // Storing of temporary values in the array for future checking of changes
+    int[] posfill = {-1, -1, -1, -1 ,-1, -1, -1, -1, -1};
+
+    boolean isgameactive = true;  // Checking either game is active or not and initially it will be active
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        info = findViewById(R.id.infoLabel);
+        info.setText("Player 1's Turn");
 
         // Initilizing buttons
-        Button sq1 = (Button)findViewById(R.id.square1);
-        Button sq2 = (Button)findViewById(R.id.square2);
-        Button sq3 = (Button)findViewById(R.id.square3);
-        Button sq4 = (Button)findViewById(R.id.square4);
-        Button sq5 = (Button)findViewById(R.id.square5);
-        Button sq6 = (Button)findViewById(R.id.square6);
-        Button sq7 = (Button)findViewById(R.id.square7);
-        Button sq8 = (Button)findViewById(R.id.square8);
-        Button sq9 = (Button)findViewById(R.id.square9);
-        Button newGame = (Button)findViewById(R.id.newgame_id);
+        btn1 = findViewById(R.id.square1);
+        btn2 = findViewById(R.id.square2);
+        btn3 = findViewById(R.id.square3);
+        btn4 = findViewById(R.id.square4);
+        btn5 = findViewById(R.id.square5);
+        btn6 = findViewById(R.id.square6);
+        btn7 = findViewById(R.id.square7);
+        btn8 = findViewById(R.id.square8);
+        btn9 = findViewById(R.id.square9);
+        newgame = findViewById(R.id.newgame_id);
 
-
-
-        //Setting Player status as . Player 1 goes first automatically
-        TextView playerStatus = (TextView) findViewById(R.id.infoLabel);
-        playerStatus.setText("Player 1's Turn");
-
-
-        //Square 1 setting X or O onClick depending on player
-        sq1.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq1.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-               else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq1.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
-        //Square 2 setting X or O onClick depending on player
-        sq2.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq2.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-                else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq2.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
-        //Square 3 setting X or O onClick depending on player
-        sq3.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq3.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-                else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq3.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
-        //Square 4 setting X or O onClick depending on player
-        sq4.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq4.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-                else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq4.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
-        //Square 5 setting X or O onClick depending on player
-        sq5.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq5.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-                else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq5.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
-        //Square 6 setting X or O onClick depending on player
-        sq6.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq6.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-                else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq6.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
-        //Square 7 setting X or O onClick depending on player
-        sq7.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq7.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-                else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq7.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
-        //Square 8 setting X or O onClick depending on player
-        sq8.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq8.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-                else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq8.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
-        //Square 9 setting X or O onClick depending on player
-        sq9.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view){
-
-                if(playerStatus.getText() =="Player 1's Turn") {
-                    sq9.setText("X");
-                    playerStatus.setText("Player 2's Turn");
-                }
-                else if (playerStatus.getText() =="Player 2's Turn"){
-                    sq9.setText("O");
-                    playerStatus.setText("Player 1's Turn");
-                }
-
-            }
-
-        });
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
+        btn5.setOnClickListener(this);
+        btn6.setOnClickListener(this);
+        btn7.setOnClickListener(this);
+        btn8.setOnClickListener(this);
+        btn9.setOnClickListener(this);
 
         //Resetting the game
-        newGame.setOnClickListener(new View.OnClickListener() {
+        newgame.setOnClickListener(new View.OnClickListener() {
             @Override
-
-            public void onClick(View view){
-
-                sq1.setText("");
-                sq2.setText("");
-                sq3.setText("");
-                sq4.setText("");
-                sq5.setText("");
-                sq6.setText("");
-                sq7.setText("");
-                sq8.setText("");
-                sq9.setText("");
-
-                playerStatus.setText("Player 1's Turn");
-
+            public void onClick(View v) {
+                newgame();
             }
-
         });
+
     }
 
+    // Implementation of "Resetting the game" functionality
+    private void newgame() {
+        active_player = player_0;
+        info.setText("Player 0's turn");
+        posfill = new int[]{-1, -1, -1, -1 ,-1, -1, -1, -1, -1};
+        btn1.setText("");
+        btn2.setText("");
+        btn3.setText("");
+        btn4.setText("");
+        btn5.setText("");
+        btn6.setText("");
+        btn7.setText("");
+        btn8.setText("");
+        btn9.setText("");
 
+        isgameactive = true;
+    }
 
+    @Override
+    public void onClick(View v) {
+
+        if(!isgameactive)
+            return;
+
+        // Detecting the current clicked button by using the id from the view object
+        Button clickedBtn = findViewById(v.getId());
+
+        int clickedTag = Integer.parseInt(v.getTag().toString());
+
+        if(posfill[clickedTag] != -1)
+        {
+            return;
+        }
+
+        posfill[clickedTag] = active_player;
+        // Checking which player's turn and switching to the next player after clicking on square button
+        if(active_player == player_0)
+        {
+            clickedBtn.setText("0");
+            active_player = player_x;
+            info.setText("Player X's turn");
+        }
+        else
+        {
+            clickedBtn.setText("X");
+            active_player = player_0;
+            info.setText("Player 0's turn");
+        }
+        // Detecting the Winner
+        findWinnigPlayer();
+    }
+
+    // Implementation of Winning Player functionality
+    private void findWinnigPlayer() {
+        // Storing the winning position in two dimensional array
+        int[][] winningPos = {{0,1,2}, {3,4,5},{6,7,8}, {0,3,6}, {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
+
+        // Iterating through the array to check the Winning position
+        for(int i=0;i<8;i++)
+        {
+            int val0 = winningPos[i][0];
+            int val1 = winningPos[i][1];
+            int val2 = winningPos[i][2];
+
+            if(posfill[val0] == posfill[val1] && posfill[val1] == posfill[val2])
+            {
+                if(posfill[val0] != -1)
+                {
+                // Now Winner is declared
+                    isgameactive = false;
+                    // Checking the Winner
+                    if(posfill[val0] == player_0)
+                    {
+                        info.setText("0's Player is Winner!");
+                    }
+                    else
+                    {
+                        info.setText("X's Player is Winner!");
+                    }
+                }
+            }
+        }
+    }
 }
