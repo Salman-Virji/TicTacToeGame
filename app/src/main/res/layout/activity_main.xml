@@ -25,18 +25,19 @@
                 android:id="@+id/square1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:tag="0"
 
-                android:textSize="30sp"
-                />
+                android:tag="0"
+                android:textSize="30sp" />
 
 
             <Button
                 android:id="@+id/square2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="1"
@@ -46,6 +47,7 @@
                 android:id="@+id/square3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="2"
@@ -59,6 +61,7 @@
                 android:id="@+id/square4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="3"
@@ -68,6 +71,7 @@
                 android:id="@+id/square5"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="4"
@@ -77,6 +81,7 @@
                 android:id="@+id/square6"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="5"
@@ -90,6 +95,7 @@
                 android:id="@+id/square7"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="6"
@@ -99,6 +105,7 @@
                 android:id="@+id/square8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="7"
@@ -108,6 +115,7 @@
                 android:id="@+id/square9"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:backgroundTint="@color/purple_500"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:tag="8"
@@ -124,16 +132,15 @@
 
         <TextView
             android:id="@+id/infoLabel"
-            android:layout_width="347dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="29dp"
+            android:layout_marginEnd="100dp"
             android:padding="25dp"
             android:text="@string/player_s_status"
-            android:textAlignment="center"
             android:textSize="25sp" />
 
         <Button

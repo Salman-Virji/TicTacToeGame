@@ -1,7 +1,9 @@
 package com.example.tictactoegame;
 
         import androidx.appcompat.app.AppCompatActivity;
+        import androidx.core.content.ContextCompat;
 
+        import android.graphics.Color;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.Button;
@@ -78,6 +80,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn7.setText("");
         btn8.setText("");
         btn9.setText("");
+        btn1.setBackgroundColor(android.R.drawable.btn_default);
+       // btn1.setBackgroundResource(android.R.drawable.btn_default);
+        btn2.setBackgroundColor(android.R.drawable.btn_default);
+        btn3.setBackgroundColor(android.R.drawable.btn_default);
+        btn4.setBackgroundColor(android.R.drawable.btn_default);
+        btn5.setBackgroundColor(android.R.drawable.btn_default);
+        btn6.setBackgroundColor(android.R.drawable.btn_default);
+        btn7.setBackgroundColor(android.R.drawable.btn_default);
+        btn8.setBackgroundColor(android.R.drawable.btn_default);
+        btn9.setBackgroundColor(android.R.drawable.btn_default);
 
         isgameactive = true;
     }
@@ -132,19 +144,155 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 if(posfill[val0] != -1)
                 {
+
                 // Now Winner is declared
                     isgameactive = false;
                     // Checking the Winner
+
+                    winnerColor();
                     if(posfill[val0] == player_0)
                     {
+
                         info.setText("0's Player is Winner!");
                     }
                     else
                     {
                         info.setText("X's Player is Winner!");
                     }
+
+
+
                 }
+
+            }
+            //Game is a draw
+            else if (btn1.getText() !="" && btn2.getText() !="" &&btn3.getText() !="" &&btn4.getText() !=""
+                    &&btn5.getText() !=""&&btn6.getText() !=""&&btn7.getText() !=""&&btn8.getText() !=""&&btn9.getText() !="")
+            {
+                info.setText("Game is a draw!");
             }
         }
+    }
+
+    public void winnerColor(){
+        // Rows
+        //Change color for winning blocks first row all X
+        if(btn1.getText() == "X" && btn2.getText() == "X" && btn3.getText() == "X")
+        {
+            btn1.setBackgroundColor(Color.parseColor("#228B22"));
+            btn2.setBackgroundColor(Color.parseColor("#228B22"));
+            btn3.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks 2nd row all X
+        else if(btn4.getText() == "X" && btn5.getText() == "X" && btn6.getText() == "X")
+        {
+            btn4.setBackgroundColor(Color.parseColor("#228B22"));
+            btn5.setBackgroundColor(Color.parseColor("#228B22"));
+            btn6.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks 3rd row all X
+        else if(btn7.getText() == "X" && btn8.getText() == "X" && btn9.getText() == "X")
+        {
+            btn7.setBackgroundColor(Color.parseColor("#228B22"));
+            btn8.setBackgroundColor(Color.parseColor("#228B22"));
+            btn9.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+
+        //Change color for winning blocks first row all O
+        else if(btn1.getText() == "0" && btn2.getText() == "0" && btn3.getText() == "0")
+        {
+            btn1.setBackgroundColor(Color.parseColor("#228B22"));
+            btn2.setBackgroundColor(Color.parseColor("#228B22"));
+            btn3.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks 2nd row all O
+        else if(btn4.getText() == "0" && btn5.getText() == "0" && btn6.getText() == "0")
+        {
+            btn4.setBackgroundColor(Color.parseColor("#228B22"));
+            btn5.setBackgroundColor(Color.parseColor("#228B22"));
+            btn6.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks 3rd row all O
+        else if(btn7.getText() == "0" && btn8.getText() == "0" && btn9.getText() == "0")
+        {
+            btn7.setBackgroundColor(Color.parseColor("#228B22"));
+            btn8.setBackgroundColor(Color.parseColor("#228B22"));
+            btn9.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+
+        //Columns
+        //Change color for winning blocks first column all X
+        else if(btn1.getText() == "X" && btn4.getText() == "X" && btn7.getText() == "X")
+        {
+            btn1.setBackgroundColor(Color.parseColor("#228B22"));
+            btn4.setBackgroundColor(Color.parseColor("#228B22"));
+            btn7.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks 2nd column all X
+        else if(btn2.getText() == "X" && btn5.getText() == "X" && btn8.getText() == "X")
+        {
+            btn2.setBackgroundColor(Color.parseColor("#228B22"));
+            btn5.setBackgroundColor(Color.parseColor("#228B22"));
+            btn8.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks 3nd column all X
+        else if(btn3.getText() == "X" && btn6.getText() == "X" && btn9.getText() == "X")
+        {
+            btn3.setBackgroundColor(Color.parseColor("#228B22"));
+            btn6.setBackgroundColor(Color.parseColor("#228B22"));
+            btn9.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks first column all 0
+        else if(btn1.getText() == "0" && btn4.getText() == "0" && btn7.getText() == "0")
+        {
+            btn1.setBackgroundColor(Color.parseColor("#228B22"));
+            btn4.setBackgroundColor(Color.parseColor("#228B22"));
+            btn7.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks 2nd column all O
+        else if(btn2.getText() == "0" && btn5.getText() == "0" && btn8.getText() == "0")
+        {
+            btn2.setBackgroundColor(Color.parseColor("#228B22"));
+            btn5.setBackgroundColor(Color.parseColor("#228B22"));
+            btn8.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Change color for winning blocks 3nd column all O
+        else if(btn3.getText() == "0" && btn6.getText() == "0" && btn9.getText() == "0")
+        {
+            btn3.setBackgroundColor(Color.parseColor("#228B22"));
+            btn6.setBackgroundColor(Color.parseColor("#228B22"));
+            btn9.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //Diagonal
+        //bottom left to top right= 0
+        else if(btn7.getText() == "0" && btn5.getText() == "0" && btn3.getText() == "0")
+        {
+            btn7.setBackgroundColor(Color.parseColor("#228B22"));
+            btn5.setBackgroundColor(Color.parseColor("#228B22"));
+            btn3.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //bottom right to top left= 0
+        else if(btn9.getText() == "0" && btn5.getText() == "0" && btn1.getText() == "0")
+        {
+            btn9.setBackgroundColor(Color.parseColor("#228B22"));
+            btn5.setBackgroundColor(Color.parseColor("#228B22"));
+            btn1.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+
+        //bottom left to top right= X
+        else if(btn7.getText() == "X" && btn5.getText() == "X" && btn3.getText() == "X")
+        {
+            btn7.setBackgroundColor(Color.parseColor("#228B22"));
+            btn5.setBackgroundColor(Color.parseColor("#228B22"));
+            btn3.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+        //bottom right to top left= X
+        else if(btn9.getText() == "X" && btn5.getText() == "X" && btn1.getText() == "X")
+        {
+            btn9.setBackgroundColor(Color.parseColor("#228B22"));
+            btn5.setBackgroundColor(Color.parseColor("#228B22"));
+            btn1.setBackgroundColor(Color.parseColor("#228B22"));
+        }
+
     }
 }
